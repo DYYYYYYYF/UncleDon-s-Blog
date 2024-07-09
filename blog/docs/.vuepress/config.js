@@ -1,4 +1,3 @@
-// import { webpackBundler } from '@vuepress/bundler-webpack'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 
@@ -46,7 +45,7 @@ export default defineUserConfig({
       ]
     }, // Notes
     footer: {
-        message: '<p>合作联系V：UncleDon-0829 \t\t Power by VuePress & vuepress-theme-plume Copyright © 2021-present pengzhanbo',
+        // message: '<p>合作联系V：UncleDon-0829 \t\t Power by VuePress & vuepress-theme-plume Copyright © 2021-present pengzhanbo',
         copyright: 'ICP证：<a href="https://beian.miit.gov.cn/">苏ICP备2024059295号-1</a>'
     }, // Footer
     social: [
@@ -54,6 +53,5 @@ export default defineUserConfig({
         {icon: 'bilibili', link: 'https://space.bilibili.com/14004754'},
     ] // Social
   }),
-  // bundler: webpackBundler(),
   bundler: viteBundler(),
 })

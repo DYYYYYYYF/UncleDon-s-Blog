@@ -1,3 +1,11 @@
+---
+title: 新增Shader属性
+author: UncleDon
+createTime: 2024/07/09 22:56:42
+permalink: /article/1eb66uk9/
+tags:
+  - DuckEngine
+---
 ## 修改.scfg文件
 
 Assets/Shaders目录下找到需要修改的Shader配置文件，新增对应参数。
