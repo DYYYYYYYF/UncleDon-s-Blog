@@ -1,3 +1,11 @@
+---
+title: Matplotlib基础及用法
+author: UncleDon
+createTime: 2024/07/25 13:55:28
+permalink: /article/7fv4r4dm/
+tags:
+  - python
+---
 # matplotlib基础用法及简单设置
 
 ### 安装并导入matplotlib库
