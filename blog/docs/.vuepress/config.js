@@ -9,7 +9,7 @@ const __dirname = getDirname(import.meta.url)
 export default defineUserConfig({
   // build config
   dest: 'dist/blog',
-  base: '/blog',
+  base: '/blog/',
 
   // 请不要忘记设置默认语言
   lang: 'zh-CN',
@@ -20,6 +20,19 @@ export default defineUserConfig({
       avatar: '/favicon.ico',
       circle: true, // 是否为圆形头像
     },
+    plugins:{
+        comment: {
+            // 服务提供商
+            provider: 'Giscus',   // Github
+            comment: true,
+            // Other
+            repo: 'DYYYYYYYF/BlogDiscussionsRepo', 
+            repoId: 'R_kgDOMc4cOw', 
+            category: 'Announcements', 
+            categoryId: 'DIC_kwDOMc4cO84ChROL',
+            mapping: 'title',
+        }
+    }, // 插件
     notes: {
       dir: '/notes/', // 声明所有笔记的目录
       link: '/', // 声明所有笔记默认的链接前缀， 默认为 '/'
@@ -52,12 +65,6 @@ export default defineUserConfig({
         {icon: 'github', link: 'https://github.com/DYYYYYYYF'},
         {icon: 'bilibili', link: 'https://space.bilibili.com/14004754'},
     ], // Social
-    comment: {
-        // 服务提供商
-        provider: 'Giscus',   // Github
-        comment: true,
-        // Other
-    }
   }),
   bundler: viteBundler(),
 })
