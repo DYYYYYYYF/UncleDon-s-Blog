@@ -2,7 +2,7 @@
 title: Markdown常用公式（LaTeX）
 author: UncleDon
 createTime: 2024/07/29 17:41:29
-permalink: /article/opmpcmtb/
+permalink: /blog/blog/article/opmpcmtb/
 tags:
   - Markdown
 ---

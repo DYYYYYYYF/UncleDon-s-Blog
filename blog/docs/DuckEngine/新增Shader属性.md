@@ -2,7 +2,7 @@
 title: 新增Shader属性
 author: UncleDon
 createTime: 2024/07/09 22:56:42
-permalink: /article/1eb66uk9/
+permalink: /blog/blog/article/1eb66uk9/
 tags:
   - DuckEngine
 ---

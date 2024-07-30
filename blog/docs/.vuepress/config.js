@@ -11,6 +11,8 @@ export default defineUserConfig({
   dest: 'dist/blog',
   base: '/blog/',
 
+  hostname: 'www.uncledon.cn',
+
   // 请不要忘记设置默认语言
   lang: 'zh-CN',
   theme: plumeTheme({
@@ -31,7 +33,10 @@ export default defineUserConfig({
             category: 'Announcements', 
             categoryId: 'DIC_kwDOMc4cO84ChROL',
             mapping: 'title',
-        }
+        },    // 评论
+            search: {
+            
+        },  //搜索
     }, // 插件
     notes: {
       dir: '/notes/', // 声明所有笔记的目录
