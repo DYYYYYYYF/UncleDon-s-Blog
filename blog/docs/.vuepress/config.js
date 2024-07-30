@@ -9,7 +9,7 @@ const __dirname = getDirname(import.meta.url)
 export default defineUserConfig({
   // build config
   dest: 'dist/blog',
-  base: '/blog/',
+  base: '/blog',
 
   // 请不要忘记设置默认语言
   lang: 'zh-CN',
@@ -17,7 +17,7 @@ export default defineUserConfig({
      profile: {
       name: 'UncleDon',
       description: '末流三本的渲染爱好者',
-      avatar: '/blogger.png',
+      avatar: '/favicon.ico',
       circle: true, // 是否为圆形头像
     },
     notes: {
@@ -51,7 +51,13 @@ export default defineUserConfig({
     social: [
         {icon: 'github', link: 'https://github.com/DYYYYYYYF'},
         {icon: 'bilibili', link: 'https://space.bilibili.com/14004754'},
-    ] // Social
+    ], // Social
+    comment: {
+        // 服务提供商
+        provider: 'Giscus',   // Github
+        comment: true,
+        // Other
+    }
   }),
   bundler: viteBundler(),
 })

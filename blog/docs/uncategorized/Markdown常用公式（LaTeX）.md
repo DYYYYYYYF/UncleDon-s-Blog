@@ -1,4 +1,11 @@
-# Markdown常用公式（LaTeX）
+---
+title: Markdown常用公式（LaTeX）
+author: UncleDon
+createTime: 2024/07/29 17:41:29
+permalink: /article/opmpcmtb/
+tags:
+  - Markdown
+---
 
 使用时在代码**前后**加上‘ **$** ’ ！！！
 
@@ -137,7 +144,7 @@
 
 | 公式                                                         | 代码                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| $\begin{matrix}    1 & x & x^2 \\    1 & y & y^2 \\    1 & z & z^2 \\    \end{matrix}$ | \begin{matrix}    <br />1 & x & x^2 \\\\    <br />1 & y & y^2 \\\\    <br />1 & z & z^2 \\\\    <br />\end{matrix} |
-| $  \begin{pmatrix}        1 & a_1 & a_1^2 & \cdots & a_1^n \\        1 & a_2 & a_2^2 & \cdots & a_2^n \\        \vdots & \vdots & \vdots & \ddots & \vdots \\        1 & a_m & a_m^2 & \cdots & a_m^n \\        \end{pmatrix}$ | \begin{pmatrix}        <br />1 & a_1 & a_1^2 & \cdots & a_1^n \\\\        <br />1 & a_2 & a_2^2 & \cdots & a_2^n \\\\        <br />\vdots & \vdots & \vdots & \ddots & \vdots \\\\        <br />1 & a_m & a_m^2 & \cdots & a_m^n \\\\        <br />\end{pmatrix} |
-| $        \left[            \begin{array}{cc|c}              1&2&3\\\\              4&5&6            \end{array}        \right] $ | \left[            <br />\begin{array}{cc\|c}              <br />1&2&3\\\\              <br />4&5&6            <br />\end{array}        <br />\right] |
+| $\begin{matrix}    1 & x & x^2 \\    1 & y & y^2 \\    1 & z & z^2 \\    \end{matrix}$ | \begin{matrix} <br />1 & x & x^2 \\\\<br />1 & y & y^2 \\\\<br />1 & z & z^2 \\\\<br />\end{matrix} |
+| $\begin{bmatrix}   1 & a_1 & a_1^2 & \cdots & a_1^n \\  1 & a_2 & a_2^2 & \cdots & a_2^n \\ \vdots & \vdots & \vdots & \ddots & \vdots \\  1 & a_m & a_m^2 & \cdots & a_m^n \\  \end{bmatrix}$ | \begin{bmatrix}  <br />1 & a_1 & a_1^2 & \cdots & a_1^n \\\\<br />1 & a_2 & a_2^2 & \cdots & a_2^n \\\\<br />\vdots & \vdots & \vdots & \ddots & \vdots \\\\<br />1 & a_m & a_m^2 & \cdots & a_m^n \\\\<br />\end{bmatrix} |
+| $\left[\begin{array}{cc\|c} 1&2&3\\ 4&5&6 \end{array} \right] $ | \left[ <br />\begin{array}{cc\|c} <br />1&2&3\\\\<br />4&5&6<br />\end{array}<br />\right] |
 
