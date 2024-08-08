@@ -1,3 +1,12 @@
+---
+title: Ubantu下载boost
+author: UncleDon
+createTime: 2024/08/08 15:24:27
+permalink: /article/r1rz8unn/
+tags:
+  - Linux
+  - Ubantu
+---
 不废话。
 
 ```shell

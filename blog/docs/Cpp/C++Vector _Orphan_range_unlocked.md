@@ -1,3 +1,13 @@
+---
+title: C++Vector _Orphan_range_unlocked
+author: UncleDon
+createTime: 2024/08/08 15:24:27
+permalink: /article/klg60ocp/
+tags:
+  - C++
+  - vector
+  - debug
+---
 首先说明我崩溃的前提：
 
 使用malloc开辟一段空间，并且该空间内存在std::vector<>成员变量，在push_back()时发生该错误（仅在Debug模式下会崩溃，因为Release模式下这段代码是跳过的）。

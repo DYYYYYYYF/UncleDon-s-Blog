@@ -1,3 +1,12 @@
+---
+title: Python自定义命令行参数
+author: UncleDon
+createTime: 2024/08/08 15:24:27
+permalink: /article/6c7gssjb/
+tags:
+  - python
+  - argparse
+---
 想要实现该功能需要使用到 argparse 库，通过库名也可以了解到该库是用来解析命令行数据的。
 
 First，我们先编写一个最基础的框架出来。

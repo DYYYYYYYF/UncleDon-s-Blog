@@ -1,3 +1,12 @@
+---
+title: CMake基础使用方法及常用函数
+author: UncleDon
+createTime: 2024/08/08 15:24:27
+permalink: /article/lmwj3hou/
+tags:
+  - C++
+  - CMake
+---
 ## 基础框架
 假设只有一个main.cpp文件，那么CMake工程仅需要三件事。
 
