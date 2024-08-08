@@ -11,7 +11,21 @@ export default defineUserConfig({
   base: '/blog/',
 
   hostname: 'http://www.uncledon.cn',
-
+  head: [
+    // 添加百度统计
+    [
+      "script",
+      {},
+      `
+     var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c501c2f60566cd72fe2e3340b58da756";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();        `
+    ]
+  ],
   // 请不要忘记设置默认语言
   lang: 'zh-CN',
   theme: plumeTheme({

@@ -1,10 +1,13 @@
 import { createApp } from 'vue'
 import router from './router/index'
 import App from './App.vue'
-import { baiduAnalytics } from 'vue-baidu-analytics'
+import baiduAnalytics from 'vue-baidu-analytics'
+// eslint-disable-next-line
+import { VueAnalytics } from 'vue-analytics'
 
 const app = createApp(App)
 
+// 百度统计
 var _hmt = _hmt || [];
 _hmt.push(['_setPageviewProperty', {
     // 已关联的自定义属性
@@ -33,6 +36,29 @@ router.beforeEach((to, from, next) => {
     }
 })
 
+// Google统计
+window.dataLayer = window.dataLayer || []
+function gtag() {
+    window.dataLayer.push(arguments)
+}
+gtag('js', new Date())
+gtag('config', 'G-WPJZN1Y7D8')
+
+let firstFlag = true
+router.beforeEach((to, from, next) => {
+    var path =  window.location.pathname + '#' + to.fullPath
+    firstFlag ? (firstFlag = false) : () => {
+        if (!path){
+            return
+        } 
+        window.ga('set', 'page', path)
+        window.ga('send', 'pageview')
+    }
+  next()
+})
+
+
+// Sitemap
 function getRoutesList(routes, pre){
     return routes.reduce((array, route) =>{
         const path = `${pre}${route.path}`
@@ -47,7 +73,6 @@ function getRoutesList(routes, pre){
         return array
     }, [])
 }
-
 // eslint-disable-next-line
 function getRoutesXML(){
     const list = getRoutesList(router.options.routes, 'http://www.uncledon.cn')
@@ -59,12 +84,15 @@ function getRoutesXML(){
 }
 
 // console.log(getRoutesXML())
-
 app.use(router)
-app.mount('#app')
-app.use(baiduAnalytics, {
-    router: router,
-    siteIdList: ['c501c2f60566cd72fe2e3340b58da756'],
-    isDebug: false
-})
+    .use(baiduAnalytics, {
+       router: router,
+       siteIdList: ['c500c2f60566cd72fe2e3340b58da756'],
+       isDebug: false
+   })
+   .use(VueAnalytics, {
+       id: 'G-WPJZN1Y7D8',
+       router
+   })
+   .mount('#app')
 
