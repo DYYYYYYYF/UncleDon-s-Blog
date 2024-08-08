@@ -17,7 +17,7 @@
 import BackGroundRow from '../assets/image/HomePageBackGround-row.png'
 import BackGroundCol from '../assets/image/HomePageBackGround-col.png'
 
-export default {
+export default { 
     name: 'UDHome',
     methods:{
         SelectBackImage(){

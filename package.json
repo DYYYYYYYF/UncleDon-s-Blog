@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "fs": "^0.0.1-security",
     "vue": "^3.2.13",
+    "vue-baidu-analytics": "^2.2.0",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "@vue/cli-service": "~5.0.0",
     "@vuepress/bundler-vite": "^2.0.0-rc.14",
     "@vuepress/bundler-webpack": "^2.0.0-rc.14",
+    "@vuepress/plugin-baidu-analytics": "^2.0.0-rc.40",
     "add": "^2.0.6",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",

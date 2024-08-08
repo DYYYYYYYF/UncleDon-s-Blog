@@ -5,13 +5,12 @@ import { plumeTheme } from 'vuepress-theme-plume'
 import { getDirname, path } from 'vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
-
 export default defineUserConfig({
   // build config
   dest: 'dist/blog',
   base: '/blog/',
 
-  hostname: 'www.uncledon.cn',
+  hostname: 'http://www.uncledon.cn',
 
   // 请不要忘记设置默认语言
   lang: 'zh-CN',
@@ -33,8 +32,9 @@ export default defineUserConfig({
             category: 'Announcements', 
             categoryId: 'DIC_kwDOMc4cO84ChROL',
             mapping: 'title',
-        },    // 评论
-            search: {
+        },    
+        // 评论
+        search: {
             
         },  //搜索
     }, // 插件

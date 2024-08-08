@@ -8,7 +8,7 @@
 import Header from './components/public/header.vue'
 import Footer from './components/public/footer.vue'
 
-export default {
+export default { 
     name: 'App',
     mounted(){
         this.InitPage();

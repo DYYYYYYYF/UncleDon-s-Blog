@@ -1,10 +1,8 @@
 ---
-title: Markdown常用公式（LaTeX）
+title: Markdown常用公式-LaTeX语法
 author: UncleDon
-createTime: 2024/07/29 17:41:29
-permalink: /blog/blog/article/opmpcmtb/
-tags:
-  - Markdown
+createTime: 2024/08/01 10:57:30
+permalink: /blog/blog/article/m6ghovwo/
 ---
 
 使用时在代码**前后**加上‘ **$** ’ ！！！
@@ -33,7 +31,7 @@ tags:
 | $\int_0^1 {x^2} \,{\rm d}x$ | \int_下限^上限 {x^2} \,{\rm d}x |
 | $\infty$                    | \infty                          |
 | $\lim_{n \to +\infty}$      | \lim_{n \to +\infty}            |
-| $sum_{i=1}^n$               | sum_{i=1}^n                     |
+| $\sum_{i=1}^n$              | \sum_{i=1}^n                    |
 
 ### 常用符号
 
@@ -67,7 +65,7 @@ tags:
 | $\times$     | \times     |
 | $\div$       | \div       |
 | $\mid$       | \mid       |
-| $ \cdot$     | \cdot      |
+| $ \sdot$     | \sdot      |
 | $\ast$       | \ast       |
 | $\leq$       | \leq       |
 | $\geq$       | \geq       |
@@ -75,6 +73,7 @@ tags:
 | $\approx$    | \approx    |
 | $\sum$       | \sum       |
 | $\backslash$ | \backslash |
+| $\iff$       | \iff       |
 
 ### 集合
 
@@ -148,3 +147,9 @@ tags:
 | $\begin{bmatrix}   1 & a_1 & a_1^2 & \cdots & a_1^n \\  1 & a_2 & a_2^2 & \cdots & a_2^n \\ \vdots & \vdots & \vdots & \ddots & \vdots \\  1 & a_m & a_m^2 & \cdots & a_m^n \\  \end{bmatrix}$ | \begin{bmatrix}  <br />1 & a_1 & a_1^2 & \cdots & a_1^n \\\\<br />1 & a_2 & a_2^2 & \cdots & a_2^n \\\\<br />\vdots & \vdots & \vdots & \ddots & \vdots \\\\<br />1 & a_m & a_m^2 & \cdots & a_m^n \\\\<br />\end{bmatrix} |
 | $\left[\begin{array}{cc\|c} 1&2&3\\ 4&5&6 \end{array} \right] $ | \left[ <br />\begin{array}{cc\|c} <br />1&2&3\\\\<br />4&5&6<br />\end{array}<br />\right] |
 
+
+### 方程组
+
+| 符号                        | 代码                            |
+| --------------------------- | ------------------------------- |
+| $\begin{cases} y=x+1 \\ y=2x+b \end{cases}$   | \begin{cases} y=x+1 \\ y=2x+b \end{cases} |

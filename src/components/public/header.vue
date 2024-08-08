@@ -1,7 +1,7 @@
 <template>
     <div id='Header'>
         <span>
-            <img @click='this.$router.push("/Home")' src="../../assets/icon/home-icon-white-256.png">
+            <img @click='this.$router.push("/")' src="../../assets/icon/home-icon-white-256.png">
 
             <!-- <router-link to='/Home'> -->
             <!-- <img src="../../assets/icon/home-icon-white-256.png"> -->
