@@ -1,3 +1,9 @@
+---
+title: Computer Graphics Interview
+author: UncleDon
+createTime: 2024/09/18 16:47:09
+permalink: /article/d0lmut87/
+---
 # 计算机图形学面试题汇总(持续更新)
 
 #### Q：PBR基础理论。
@@ -81,7 +87,7 @@ $$
 R = 2P - I \\
 P = I + S \\
 S = \frac{-I \dot \quad N}{|N|^2} \dot \quad N\\
-因为N为单位向量: S=-I\dot \quad N^2\\
+\text{因为N为单位向量: }S=-I\dot \quad N^2\\
 R = 2I + 2S - I = I + 2S = I - 2I\dot \quad N^2
 $$
 

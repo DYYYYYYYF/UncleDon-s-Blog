@@ -1,3 +1,9 @@
+---
+title: PBR
+author: UncleDon
+createTime: 2024/09/18 16:47:09
+permalink: /article/94fz9wvx/
+---
 # 基于物理的渲染PBR
 
 ### 理论

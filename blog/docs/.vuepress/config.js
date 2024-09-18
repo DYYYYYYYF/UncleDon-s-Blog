@@ -32,7 +32,7 @@ export default defineUserConfig({
      profile: {
       name: 'UncleDon',
       description: '末流三本的渲染爱好者',
-      avatar: '/favicon.ico',
+      avatar: '../image/HomePageBackGround-col.png',
       circle: true, // 是否为圆形头像
     },
     plugins:{

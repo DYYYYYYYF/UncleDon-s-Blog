@@ -24,20 +24,19 @@ export default {
             this.websock.onclose = this.websocketclose
         },
         websocketonopen(){ //连接建立之后执行send方法发送数据
-
-            this.websocketsend("welecome_new_visitor");
+            this.websocketsend("Client message: welecome_new_visitor");
         },
         websocketonerror(){//连接建立失败重连
-            console.log("Connect failed...")
+            console.log("Client message: Connect failed...")
         },
         websocketonmessage(e){ //数据接收
-            console.log(e.data);
+            console.log("Server message: " + e.data);
         },
         websocketsend(Data){//数据发送
             this.websock.send(Data);
         },
         websocketclose(e){  //关闭
-            console.log('断开连接',e);
+            console.log('Server message: ' + '断开连接', e);
         }
 
     }

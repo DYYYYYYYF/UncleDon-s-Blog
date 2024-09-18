@@ -89,6 +89,7 @@ export default {
         return {
             websock: null,
             fileName: "DimensionEngine.zip",
+            content: []
         }
     },
     methods:{
@@ -107,21 +108,26 @@ export default {
             console.log("Connect failed...")
         },
         websocketonmessage(e){ //数据接收
-            console.log("Get message")
-            if(e.data instanceof Blob){
-                console.log("Blob file stream.")
+            console.log("Get message" + e.data)
+            if (e.data == 'begin'){
+                this.content = []
+            }
 
-                var fileData = e.data
-
-                console.log("Download down.")
-                // New blob object 
-                var blob = new Blob([fileData], { type: 'application/octet-stream'})
+            if (e.data == 'end'){
+                var blob = new Blob([this.content], { type: 'application/octet-stream'})
 
                 // Create download link
                 var downloadLink = document.createElement('a')
                 downloadLink.href = URL.createObjectURL(blob)
                 downloadLink.download = this.fileName
                 downloadLink.click()
+
+                console.log("Download down.")
+                this.websocketclose(e)
+            }
+
+            if(e.data instanceof Blob){
+                this.content += e.data
             }
 
         },
