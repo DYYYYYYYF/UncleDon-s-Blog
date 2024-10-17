@@ -1,5 +1,13 @@
-# Vulkan无法找到Validation扩展
-
+---
+title: Vulkan无法找到Validation扩展
+author: UncleDon
+createTime: 2024/09/30 17:56:09
+permalink: /article/79f76pa8/
+tags:
+  - Vulkan
+  - Validation
+  - Computer Graphics
+---
 在Vulkan安装路径下/Bin中找到vkconfig，双击打开运行。
 
 ![image-20240930174328382](./Assets/image-20240930174328382.png)
