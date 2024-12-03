@@ -1,3 +1,9 @@
+---
+title: SIMD（Single Instruction Multiply Data）
+author: UncleDon
+createTime: 2024/12/02 23:39:21
+permalink: /article/0n2cenuw/
+---
 ## AVX
 
 ### 定义：
