@@ -1,3 +1,9 @@
+---
+title: ollama本地部署DeepSeek模型
+author: UncleDon
+createTime: 2025/02/08 09:28:57
+permalink: /article/u9p23zac/
+---
 # 1.安装Ollama
 
 进入**ollama**[官网](https://ollama.com/)下载客户端，会根据用户系统下载对应程序（官网不需要梯子，但是下载需要，因为本质上是从Github上Download下来）。
