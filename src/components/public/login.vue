@@ -36,6 +36,9 @@ export default {
           password: this.password
         });
         
+        localStorage.setItem('jwt_token', response.data.token);
+        localStorage.setItem('user_id', response.data.user_id);
+
         this.error = response?.data?.message || '登陆成功';
         this.$router.push('/UncleDon/FileOperationPage')
       } catch (err) {

@@ -6,7 +6,7 @@
       <tr>
         <th>文件名</th>
         <th>大小</th>
-        <th>修改日期</th>
+        <!-- <th>修改日期</th> -->
         <th>操作</th>
       </tr>
     </thead>
@@ -14,10 +14,10 @@
       <tr v-for="file in files" :key="file.name">
         <td>{{ file.name }}</td>
         <td>{{ formatFileSize(file.size) }}</td>
-        <td>{{ formatDate(file.last_modified) }}</td>
+        <!-- <td>{{ formatDate(file.last_modified) }}</td> -->
         <td class="actions">
-          <button @click="preview(file)" class="btn-preview">预览</button>
           <button @click="downloadFile(file.name)" class="btn-download">下载</button>
+          <button @click="deleteFile(file.name)" class="btn-preview">删除</button>
         </td>
       </tr>
     </tbody>
@@ -67,8 +67,27 @@ export default {
     };
   },
   async created() {
-    const res = await axios.post('/backend/file/acquire_file_list');
-    this.files = res.data.files;
+    const token = localStorage.getItem('jwt_token');
+    const id = localStorage.getItem('user_id');
+
+    try {
+         const res = await axios.post('/backend/file/acquire_file_list',
+            { 'user_id': id },
+            {
+              headers: {
+                'Authorization': `Bearer ${token}` 
+              }
+            }
+         );
+
+        this.files = res.data.files;
+    } catch (err) {
+        if (err.response?.status === 401) {
+            // Token无效，跳转到登录
+            // window.location.href = '/login';
+        }
+        throw err;
+    }
   },
   methods: {
       formatFileSize(bytes) {
@@ -78,13 +97,30 @@ export default {
         const i = Math.floor(Math.log(bytes) / Math.log(k));
         return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
       },
-      
       formatDate(timestamp) {
         return new Date(timestamp).toLocaleString();
       },
-    handleFileChange(e) {
-      this.files = Array.from(e.target.files);
-    },
+      handleFileChange(e) {
+        this.files = Array.from(e.target.files);
+      },
+      async deleteFile(filename){
+        if (!filename.trim()) return;
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/backend/file/delete';
+        form.style.display = 'none';
+        
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'file';
+        input.value = filename;
+        
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+      },
     async uploadFiles() {
       if (!this.files.length) return;
 
@@ -108,6 +144,9 @@ export default {
 
         this.message = `上传成功: ${response.data.saved_files.join(', ')}`;
         this.$emit('upload-success', response.data);
+
+        const res = await axios.post('/backend/file/acquire_file_list');
+        this.files = res.data.files;
       } catch (error) {
         this.message = `上传失败: ${error.response?.data || error.message}`;
       } finally {
