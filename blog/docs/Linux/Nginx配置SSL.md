@@ -1,3 +1,9 @@
+---
+title: Nginx配置SSL
+author: UncleDon
+createTime: 2025/02/21 16:12:23
+permalink: /article/527x1qt2/
+---
 # 确认SSL模块
 
 ```shell

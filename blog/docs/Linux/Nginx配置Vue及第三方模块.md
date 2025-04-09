@@ -1,3 +1,9 @@
+---
+title: Nginx配置Vue及第三方模块
+author: UncleDon
+createTime: 2025/02/21 16:12:23
+permalink: /article/yx891aua/
+---
 # 安装Nginx
 
 #### 安装依赖（gcc/zlib/ssl/pcre），按需下载

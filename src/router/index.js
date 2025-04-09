@@ -23,8 +23,18 @@ const router = createRouter({
                     path:'VulkanRenderEngine',
                     name:'VulkanRenderEngine',
                     component:()=>import("../components/uncledon/applications/RenderEngine/index.vue"),
+                },
+                {
+                    path:'FileOperationPage',
+                    name:'FileOperationPage',
+                    component:()=>import("../components/uncledon/files/FileOperation.vue"),
                 }
             ]
+        },
+        {
+            path:'/Login',
+            name:'Login',
+            component:()=>import("../components/public/login.vue")
         },
         {
             path:'/Header',

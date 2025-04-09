@@ -7,6 +7,7 @@
             <div>
                 <span @click="this.$router.push('/UncleDon/VulkanRenderEngine')">RenderEngine</span>
                 <span @click="this.RouteToBlog('/blog/')">Blog</span>
+                <span @click="this.$router.push('/Login')">Login</span>
             </div>
         </div>
     </div>
