@@ -1,12 +1,54 @@
 <template>
-  <div>
-    <input type="file" ref="fileInput" @change="handleFileChange" multiple>
-    <button @click="uploadFiles" :disabled="!files.length">上传</button>
-    <div v-if="progress.visible" class="progress-bar">
-      <div :style="{ width: progress.percentage + '%' }"></div>
+  <div class="file-manager">
+  <!-- 文件列表表格 -->
+  <table class="file-table">
+    <thead>
+      <tr>
+        <th>文件名</th>
+        <th>大小</th>
+        <th>修改日期</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="file in files" :key="file.name">
+        <td>{{ file.name }}</td>
+        <td>{{ formatFileSize(file.size) }}</td>
+        <td>{{ formatDate(file.last_modified) }}</td>
+        <td class="actions">
+          <button @click="preview(file)" class="btn-preview">预览</button>
+          <button @click="downloadFile(file.name)" class="btn-download">下载</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 上传区域 -->
+  <div class="upload-section">
+    <input 
+      type="file" 
+      ref="fileInput" 
+      @change="handleFileChange" 
+      multiple
+      class="file-input"
+    >
+    <button 
+      @click="uploadFiles" 
+      :disabled="!files.length" 
+      class="btn-upload"
+    >
+      上传
+    </button>
+    
+    <!-- 进度条 -->
+    <div v-if="progress.visible" class="progress-container">
+      <div class="progress-bar" :style="{ width: progress.percentage + '%' }"></div>
+      <span class="progress-text">{{ progress.percentage }}%</span>
     </div>
-    <p v-if="message">{{ message }}</p>
+    
+    <p v-if="message" class="message">{{ message }}</p>
   </div>
+</div>
 </template>
 
 <script>
@@ -24,7 +66,22 @@ export default {
       }
     };
   },
+  async created() {
+    const res = await axios.post('/backend/file/acquire_file_list');
+    this.files = res.data.files;
+  },
   methods: {
+      formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      },
+      
+      formatDate(timestamp) {
+        return new Date(timestamp).toLocaleString();
+      },
     handleFileChange(e) {
       this.files = Array.from(e.target.files);
     },
@@ -61,8 +118,27 @@ export default {
           this.$refs.fileInput.value = ''; // 清空文件选择
         }, 2000);
       }
+    },
+    async downloadFile(filename) {
+        if (!filename.trim()) return;
+
+        this.message = '开始下载...';
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/backend/file/download';
+        form.style.display = 'none';
+        
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'file';
+        input.value = filename;
+        
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
     }
-  }
+    },
 };
 </script>
 
@@ -77,5 +153,137 @@ export default {
   height: 100%;
   background: #42b983;
   transition: width 0.3s;
+}
+
+.file-manager {
+  max-width: 1000px;
+  height: 93vh;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.file-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.file-table th, .file-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.file-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.file-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-preview, .btn-download {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-preview {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-download {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-preview:hover {
+  background-color: #45a049;
+}
+
+.btn-download:hover {
+  background-color: #0b7dda;
+}
+
+.upload-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.file-input {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.btn-upload {
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-upload:hover {
+  background-color: #e68a00;
+}
+
+.btn-upload:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.progress-container {
+  margin-top: 15px;
+  height: 20px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #495057;
+  font-size: 12px;
+}
+
+.message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
 }
 </style>
