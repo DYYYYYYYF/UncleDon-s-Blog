@@ -84,7 +84,7 @@ export default {
     } catch (err) {
         if (err.response?.status === 401) {
             // Token无效，跳转到登录
-            // window.location.href = '/login';
+            window.location.href = '/login';
         }
         throw err;
     }
