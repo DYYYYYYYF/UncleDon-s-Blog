@@ -1,4 +1,13 @@
-# 安装pyinstaller
+---
+title: Python打包exe程序
+author: UncleDon
+createTime: 2025/04/11 09:17:09
+permalink: /article/8d7t3sfs/
+tags:
+  - python
+---
+
+## 安装pyinstaller
 
 官网：["https://pyinstaller.org/"]("https://pyinstaller.org/")
 

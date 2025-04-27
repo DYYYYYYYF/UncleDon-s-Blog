@@ -3,6 +3,9 @@ title: Nginx配置Vue及第三方模块
 author: UncleDon
 createTime: 2025/02/21 16:12:23
 permalink: /article/yx891aua/
+tags:
+  - Linux
+  - Ubantu
 ---
 # 安装Nginx
 

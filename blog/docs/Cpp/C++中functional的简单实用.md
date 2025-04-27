@@ -3,6 +3,8 @@ title: C++中functional的简单实用
 author: UncleDon
 createTime: 2024/11/04 10:23:31
 permalink: /article/o0575kxb/
+tags:
+  - C++
 ---
 std::function包含于头文件functional中，属于C11的新特性。个人主要用于注册回调函数。
 

@@ -3,6 +3,8 @@ title: ollama本地部署DeepSeek模型
 author: UncleDon
 createTime: 2025/02/08 09:28:57
 permalink: /article/u9p23zac/
+tags:
+  - Utils
 ---
 # 1.安装Ollama
 

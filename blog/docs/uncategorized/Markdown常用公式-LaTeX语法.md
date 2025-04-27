@@ -3,6 +3,8 @@ title: Markdown常用公式-LaTeX语法
 author: UncleDon
 createTime: 2024/08/01 10:57:30
 permalink: /blog/blog/article/m6ghovwo/
+tags:
+  - Utils
 ---
 
 使用时在代码**前后**加上‘ **$** ’ ！！！

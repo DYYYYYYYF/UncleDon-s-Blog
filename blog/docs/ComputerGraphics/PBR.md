@@ -3,6 +3,9 @@ title: PBR
 author: UncleDon
 createTime: 2024/09/18 16:47:09
 permalink: /article/94fz9wvx/
+tags:
+  - PBR
+  - Computer Graphics
 ---
 # 基于物理的渲染PBR
 
