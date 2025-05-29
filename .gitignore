@@ -1,8 +1,6 @@
 .DS_Store
 node_modules
 
-/dist
-*/dist
 .cache
 .temp
 
@@ -28,5 +26,8 @@ pnpm-debug.log*
 *.sw?
 
 # personal file
-public/EngineDocuments
-public/blog
+index-site/public/EngineDocuments
+index-site/public/blog
+
+index-site/dist
+index-site/blog/dist
