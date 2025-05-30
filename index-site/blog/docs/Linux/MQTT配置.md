@@ -1,3 +1,12 @@
+---
+title: MQTT配置
+author: UncleDon
+createTime: 2025/05/29 17:44:34
+permalink: /article/p9bu5jtd/
+tags:
+  - Linux
+  - MQTT
+---
 # MQTT服务搭建指南
 
 ## 什么是MQTT
